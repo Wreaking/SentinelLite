@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #09111d 0%, #111827 100%);
+    color: #e2e8f0;
+}
+
+button {
+    font: inherit;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.page-shell {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 24px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: #7dd3fc;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #f8fafc;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.lab-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.login-panel,
+.control-panel,
+.feed-panel {
+    background: rgba(15, 23, 42, 0.88);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.45);
+}
+
+.panel-label {
+    margin-bottom: 12px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: #7dd3fc;
+    font-weight: bold;
+}
+
+.login-box {
+    background: #0f172a;
+    border-radius: 14px;
+    border: 1px solid rgba(125, 211, 252, 0.25);
+    padding: 20px;
+}
+
+.brand-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #f8fafc;
+}
+
+.brand-mark {
+    font-size: 1.7rem;
+}
+
+.field-group {
+    margin-bottom: 16px;
+}
+
+.field-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-weight: bold;
+}
+
+.field-group input {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #020817;
+    color: #f8fafc;
+    padding: 12px 14px;
+    font-size: 1rem;
+}
+
+.primary {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    padding: 12px 18px;
+    font-weight: bold;
+}
+
+.primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+}
+
+.secondary {
+    background: rgba(71, 85, 105, 0.8);
+    color: white;
+    padding: 10px 14px;
+}
+
+.danger {
+    background: rgba(220, 38, 38, 0.9);
+    color: white;
+    padding: 10px 14px;
+}
+
+.login-result {
+    margin-top: 16px;
+    min-height: 22px;
+    color: #7dd3fc;
+    font-weight: bold;
+}
+
+.scenario-card {
+    background: #0b1220;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.scenario-card.active {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.5);
+    background: rgba(30, 41, 59, 0.9);
+}
+
+.scenario-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+}
+
+.scenario-card p {
+    margin: 0;
+    color: #cbd5e1;
+    line-height: 1.4;
+    font-size: 0.92rem;
+}
+
+.controls-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.speed-box {
+    margin-top: 18px;
+    background: #0b1220;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.speed-box > span {
+    display: block;
+    margin-bottom: 10px;
+    color: #e2e8f0;
+    font-weight: bold;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #cbd5e1;
+}
+
+.feed-panel {
+    margin-top: 8px;
+}
+
+.event-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: "Consolas", monospace;
+    color: #cbd5e1;
+    max-height: 220px;
+    overflow: auto;
+}
+
+.feed-item {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+@media (max-width: 900px) {
+    .lab-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

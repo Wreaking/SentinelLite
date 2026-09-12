@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentinelLite Security Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">CONTROLLED LOCAL SECURITY LAB</p>
+          <h1>SentinelLite Security Lab</h1>
+        </div>
+        <div class="header-actions">
+          <button class="secondary" id="resetBtn">Reset</button>
+        </div>
+      </header>
+
+      <main class="lab-layout">
+        <section class="login-panel">
+          <div class="panel-label">TARGET LOGIN APPLICATION</div>
+          <div class="login-box">
+            <div class="brand-row">
+              <span class="brand-mark">🛡️</span>
+              <span>Security Lab</span>
+            </div>
+
+            <div class="field-group">
+              <label for="usernameField">Username</label>
+              <input id="usernameField" type="text" value="" placeholder="sample_user" />
+            </div>
+
+            <div class="field-group">
+              <label for="passwordField">Password</label>
+              <input id="passwordField" type="password" value="" placeholder="Password" />
+            </div>
+
+            <button id="loginBtn" class="primary">LOGIN</button>
+            <div id="loginResult" class="login-result">Ready for local simulation</div>
+          </div>
+        </section>
+
+        <aside class="control-panel">
+          <div class="panel-label">SIMULATION CONTROLS</div>
+
+          <div class="scenario-card active" data-scenario="normal">
+            <h3>Normal Activity</h3>
+            <p>Safe login behavior used for baseline monitoring.</p>
+          </div>
+
+          <div class="scenario-card" data-scenario="brute-force">
+            <h3>Brute Force</h3>
+            <p>Repeated failed authentication against the local login page.</p>
+          </div>
+
+          <div class="scenario-card" data-scenario="credential-stuffing">
+            <h3>Credential Stuffing</h3>
+            <p>Multiple usernames attempted from one local source.</p>
+          </div>
+
+          <div class="scenario-card" data-scenario="port-scan">
+            <h3>Port Scan</h3>
+            <p>Local service probing pattern across multiple ports.</p>
+          </div>
+
+          <div class="scenario-card" data-scenario="traffic-spike">
+            <h3>Traffic Spike</h3>
+            <p>Surge in local HTTP activity against the lab app.</p>
+          </div>
+
+          <div class="controls-row">
+            <button id="startBtn" class="primary">▶ Start</button>
+            <button id="pauseBtn" class="secondary">⏸ Pause</button>
+            <button id="stopBtn" class="danger">🔄 Reset</button>
+          </div>
+
+          <div class="speed-box">
+            <span>Simulation Speed</span>
+            <div class="radio-group">
+              <label><input type="radio" name="speed" value="slow"> Slow</label>
+              <label><input type="radio" name="speed" value="normal" checked> Normal</label>
+              <label><input type="radio" name="speed" value="fast"> Fast</label>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <section class="feed-panel">
+        <div class="panel-label">LIVE ACTIVITY FEED</div>
+        <div id="eventFeed" class="event-feed">
+          <div class="feed-item">[system] Security lab ready for local monitoring.</div>
+        </div>
+      </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+{
+    "brute_force": {
+        "description": "Detect repeated failed login attempts from the same IP",
+        "failed_attempts": 5,
+        "time_window_seconds": 60,
+        "severity": "HIGH",
+        "score": 40
+    },
+    "credential_stuffing": {
+        "description": "Detect one IP trying many different usernames",
+        "unique_usernames": 4,
+        "time_window_seconds": 120,
+        "severity": "HIGH",
+        "score": 50
+    },
+    "port_scan": {
+        "description": "Detect one IP probing multiple ports",
+        "unique_ports": 4,
+        "time_window_seconds": 60,
+        "severity": "MEDIUM",
+        "score": 30
+    },
+    "traffic_spike": {
+        "description": "Detect unusually high request volume from one IP",
+        "max_requests": 100,
+        "time_window_seconds": 60,
+        "severity": "HIGH",
+        "score": 50
+    },
+    "suspicious_login": {
+        "description": "Detect suspicious login patterns like fail-then-success",
+        "failed_before_success": 3,
+        "time_window_seconds": 120,
+        "suspicious_hours_start": 2,
+        "suspicious_hours_end": 5,
+        "severity": "MEDIUM",
+        "score": 25
+    },
+    "threat_scores": {
+        "failed_login": 5,
+        "repeated_failed_login": 10,
+        "brute_force": 40,
+        "credential_stuffing": 50,
+        "port_scan": 30,
+        "traffic_spike": 50
+    },
+    "threat_levels": {
+        "LOW": [0, 20],
+        "MEDIUM": [21, 40],
+        "HIGH": [41, 70],
+        "CRITICAL": [71, 100]
+    }
+}
